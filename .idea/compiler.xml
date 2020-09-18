@@ -8,11 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="zbf-auth-core" />
         <module name="zbf-user-server" />
-        <module name="zbf-gateway" />
-        <module name="zbf-common" />
         <module name="yzm-service" />
+        <module name="zbf-common" />
+        <module name="zbf-gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zbf-menu-service" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -20,6 +23,7 @@
       <module name="zbf-auth-core" options="-parameters" />
       <module name="zbf-common" options="-parameters" />
       <module name="zbf-gateway" options="-parameters" />
+      <module name="zbf-menu-service" options="-parameters" />
       <module name="zbf-user-server" options="-parameters" />
     </option>
   </component>

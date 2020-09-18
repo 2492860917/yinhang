@@ -18,13 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.jws.soap.SOAPBinding;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
  *  前端控制器
  * </p>
  *
- * @author ssf
+ * @author Ljl
  * @since 2020-09-12
  */
 @RestController
@@ -66,6 +67,7 @@ public class UserController {
         user.setUpdateTime(new Date());
         return userService.updateById(user);
     }
+
 
 }
 
