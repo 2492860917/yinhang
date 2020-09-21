@@ -64,7 +64,6 @@ public class UserController {
         userQueryWrapper.eq("tel",user.getTel());
         User one = userService.getOne(userQueryWrapper);
         user.setId(one.getId());
-        user.setUpdateTime(new Date());
         return userService.updateById(user);
     }
 

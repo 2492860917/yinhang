@@ -2,14 +2,18 @@ package com.zbf.user.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableId;
+
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
@@ -20,52 +24,18 @@ import lombok.experimental.Accessors;
  * @since 2020-09-12
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-@TableName("base_user")
 public class User implements Serializable {
 
-    private static final long serialVersionUID=1L;
 
-    /**
-     * 用户表
-     */
-    @TableId("id")
-    private Long id;
-
-    @TableField("version")
-    private Integer version;
-
-    @TableField("userName")
+    private Integer id;
     private String userName;
-
-    @TableField("loginName")
     private String loginName;
-
-    @TableField("passWord")
     private String passWord;
-
-    @TableField("tel")
     private String tel;
-
-    @TableField("buMen")
-    private String buMen;
-
-    @TableField("salt")
-    private String salt;
-
-    @TableField("createTime")
+    private String mail;
     private Date createTime;
-
-    @TableField("updateTime")
-    private Date updateTime;
-
-    @TableField("email")
-    private String email;
-    @TableField("sex")
-    private Sex sex;
-
-
-
-
+    private String sex;
+    private Integer status;
+    private String salt;
+    private Integer version;
 }

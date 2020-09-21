@@ -26,19 +26,18 @@
 
 
     <select id="selects" resultMap="mapVo">
-select u.*, r.name,r.miaoshu,r.role_code,r.id from base_user u INNER join base_user_role ur on u.id=ur.userId
-INNER JOIN base_role r on ur.roleId=r.id
+select * from base_user
 
     <where>
-        <if test="user.userName!=null and user.userName!=''">
-            and u.userName like concat('%',#{user.userName},'%')
+        <if test="uservo.userName!=null and uservo.userName!=''">
+            and userName like concat('%',#{uservo.userName},'%')
         </if>
-        <if test="user.loginName!=null and user.loginName!=''">
-            and u.loginName like concat('%',#{user.loginName},'%')
+        <if test="uservo.loginName!=null and uservo.loginName!=''">
+            and loginName like concat('%',#{uservo.loginName},'%')
         </if>
 
     </where>
-        GROUP BY u.id
+
 
 
     </select>
