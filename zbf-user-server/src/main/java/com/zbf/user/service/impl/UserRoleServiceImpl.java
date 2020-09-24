@@ -2,12 +2,15 @@ package com.zbf.user.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zbf.common.utils.ReadExcel;
 import com.zbf.user.entity.Role;
 import com.zbf.user.entity.User;
+import com.zbf.user.mapper.UserMapper;
 import com.zbf.user.mapper.UserRoleMapper;
 import com.zbf.user.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -22,6 +25,9 @@ import java.util.Map;
 public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
     private UserRoleMapper userRoleMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public boolean getAdd(User user) {
@@ -52,6 +58,5 @@ public class UserRoleServiceImpl implements UserRoleService {
     public Boolean Add(User user) {
         return userRoleMapper.add(user);
     }
-
 
 }

@@ -1,9 +1,7 @@
 package com.zbf.auth.denglu;
 
-import com.zbf.auth.mapper.LoginPhone;
 import com.zbf.auth.mapper.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
@@ -115,6 +113,7 @@ public class MyUserServiceDetail implements UserDetailsService {
 
                 //创建用户对象
                 User user = new User(userByUserName.get("loginName").toString(),userByUserName.get("passWord").toString(), list);
+
 
                 return user;
             }else{

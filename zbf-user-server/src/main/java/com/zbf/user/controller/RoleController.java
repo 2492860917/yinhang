@@ -68,6 +68,7 @@ public class RoleController {
         return responseResult;
     }
 
+    //excel导出
     @RequestMapping("toExcel")
     public ResponseResult toExcel(@RequestBody ExcleEntity excleEntity){
         System.err.println(excleEntity);
@@ -144,6 +145,23 @@ public class RoleController {
             return responseResult;
         }
 
+    }
+
+    @RequestMapping("getRoleAll")
+    public ResponseResult getRoleAll(){
+        ResponseResult responseResult = new ResponseResult();
+         List<Map<String,Object>>  roleAll= roleMapper.getRoleAll();
+         responseResult.setResult(roleAll);
+         return  responseResult;
+    }
+
+
+    @RequestMapping("getMenuRoleList")
+    public ResponseResult getMenuRoleList(){
+        ResponseResult responseResult=new ResponseResult();
+        List<Map<String,Object>> getMenuRoleList=roleMapper.getMenuRoleList();
+        responseResult.setResult(getMenuRoleList);
+        return responseResult;
     }
 
 

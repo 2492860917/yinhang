@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zbf-common" />
+        <module name="zbf-auth-core" />
         <module name="zbf-user-server" />
         <module name="yzm-service" />
-        <module name="zbf-auth-core" />
+        <module name="zbf-common" />
         <module name="zbf-gateway" />
       </profile>
     </annotationProcessing>
